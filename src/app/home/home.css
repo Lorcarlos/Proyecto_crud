@@ -1,4 +1,4 @@
-/* === Fondo === */
+
 .background {
     position: fixed;
     top: 0;
@@ -20,7 +20,6 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* === Navbar === */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -52,7 +51,6 @@
     background-color: #8a6d3b;
 }
 
-/* === Modal === */
 .modal-backdrop {
     position: fixed;
     top: 0;
@@ -101,7 +99,6 @@
 .blur-background {
     filter: blur(5px);
     pointer-events: none;
-    /* Opcional: evita interacción con el contenido detrás */
     user-select: none;
     transition: filter 0.3s ease;
 }
@@ -128,7 +125,7 @@
     background-color: #434190;
 }
 
-/* === Contenido Principal === */
+
 .content {
     padding: 2rem;
     max-width: 900px;
@@ -215,6 +212,57 @@
     font-weight: 700;
     font-size: 0.9rem;
 }
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.header_container .column {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.header_container .id {
+  flex: 0.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* === Responsive === */
 @media (max-width: 768px) {
