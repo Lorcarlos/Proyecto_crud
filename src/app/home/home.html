@@ -1,52 +1,26 @@
-<div class="background"></div>
-<!-- Menú superior -->
-<header class="navbar">
-  <h1 class="brand">Mi Aplicación</h1>
-  <button class="login-btn" (click)="openModal()">Iniciar sesión</button>
-</header>
+<div class="contenedor">
+    <header class="menu">
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Portafolio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<!-- Modal login -->
-<div class="modal-backdrop" *ngIf="isVisible" (click)="closeModal()"></div>
+    <section class="titulo">
+      <h1>Panel de Inventario</h1>
+    </section>
 
-<div class="modal" *ngIf="isVisible">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <span class="close" (click)="closeModal()">&times;</span>
-    <h2>Iniciar sesión</h2>
-    <form (ngSubmit)="onLogin()" class="login-form">
-      <input formControlName="email" type="email" placeholder="Correo electrónico" required />
-      <input formControlName="password" type="password" placeholder="Contraseña" required />
-      <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
-    </form>
+    <main class="inventario">
+      <h2>Inventario</h2>
+      <p>Aquí puedes visualizar los productos disponibles en tiempo real con detalles y métricas clave para tu negocio.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </main>
+
+    <aside class="imagen"></aside>
   </div>
-</div>
-
-
-<main class="content">
-  <!-- <h1 class="title">Inventario</h1> -->
-
-<div class="container">
-  <div class="header_container">
-    <div class="column id">ID</div>
-    <div class="column name">Nombre</div>
-    <div class="column broker">Broker</div>
-    <div class="column city">Ciudad</div>
-    <div class="column tours">Tours</div>
-  </div>
-
-  <div class="internal_container">
-    <div class="column id">20439</div>
-    <div class="column name">John Doe</div>
-    <div class="column broker">Century 21</div>
-    <div class="column city">Northville, MI</div>
-    <div class="column tours">1 Tour</div>
-  </div>
-  <div class="internal_container">
-    <div class="column id">20440</div>
-    <div class="column name">Ryan Steward</div>
-    <div class="column broker">Century 21</div>
-    <div class="column city">Northville, MI</div>
-    <div class="column tours">1 Tour</div>
-  </div>
-</div>
-
-</main>
