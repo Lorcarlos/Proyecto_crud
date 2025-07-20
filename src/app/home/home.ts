@@ -32,11 +32,15 @@ export class Home {
     if (this.loginForm.valid) {
       console.log('Login data:', this.loginForm.value);
       this.closeModal();
-      // Aquí puedes integrar una llamada a tu API o servicio de autenticación
     } else {
-      this.loginForm.markAllAsTouched(); // Muestra los errores si los hay
+      this.loginForm.markAllAsTouched(); 
     }
   }
+
+
+    
+
+
 }
 
 
