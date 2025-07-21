@@ -1,147 +1,293 @@
-    :root {
-      --accent: #00bcd4;
-      --bg-dark: #0f111a;
-      --bg-panel: rgba(255, 255, 255, 0.05);
-      --text-light: #f5f5f5;
-      --text-muted: #aaa;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0e0e0e;
+  color: white;
+  line-height: 1.6;
+}
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: url('https://wallpapercave.com/wp/wp9155950.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: var(--text-light);
-      height: 100vh;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background-color: #0e0e0e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    .contenedor {
-      display: grid;
-      grid-template-areas:
-        'menu menu'
-        'titulo imagen'
-        'inventario imagen';
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: auto 180px 1fr;
-      gap: 20px;
-      background: rgba(15, 17, 26, 0.9);
-      padding: 30px;
-      border-radius: 16px;
-      width: 95vw;
-      max-width: 1400px;
-      height: 90vh;
-      backdrop-filter: blur(12px);
-    }
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 
-    .menu {
-      grid-area: menu;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 20px;
-      background: var(--bg-panel);
-      border-bottom: 2px solid var(--accent);
-      border-radius: 12px;
-    }
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 30px;
-    }
+nav a:hover {
+  color: #00ffff;
+}
 
-    nav a {
-      color: var(--text-light);
-      text-decoration: none;
-      font-weight: 600;
-      position: relative;
-      padding-bottom: 4px;
-    }
+.hero {
+  background: linear-gradient(to bottom, #111, #0e0e0e34), url('../../assets/Imagenes.home/wallhaven-dp9gr3.png') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  padding: 2rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  
+}
 
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 0%;
-      background: var(--accent);
-      transition: width 0.3s ease;
-    }
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
-    nav a:hover::after {
-      width: 100%;
-    }
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
 
-    .titulo {
-      grid-area: titulo;
-      display: flex;
-      align-items: center;
-      padding-left: 30px;
-      border-left: 4px solid var(--accent);
-      background: var(--bg-panel);
-      border-radius: 12px;
-    }
+.btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #00ffff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
 
-    .titulo h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.5em;
-      color: var(--accent);
-      text-shadow: 0 0 10px var(--accent);
-    }
+.btn:hover {
+  background-color: #00c0c0;
+}
 
-    .inventario {
-      grid-area: inventario;
-      padding: 20px 30px;
-      background: var(--bg-panel);
-      border-radius: 12px;
-      overflow-y: auto;
-    }
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #111;
+  gap: 2rem;
+}
 
-    .inventario h2 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 2em;
-      color: var(--accent);
-      margin-bottom: 15px;
-    }
+.feature-card {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
 
-    .inventario p {
-      color: var(--text-muted);
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
+.feature-card:hover {
+  transform: translateY(-5px);
+}
 
-    .imagen {
-      grid-area: imagen;
-      background: url('https://i.imgur.com/Rpl5v4y.png') center/contain no-repeat;
-      background-color: rgba(255, 255, 255, 0.02);
-      border-radius: 12px;
-      filter: drop-shadow(0 0 25px var(--accent));
-    }
+.feature-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 
-    @media (max-width: 768px) {
-      .contenedor {
-        grid-template-areas:
-          'menu'
-          'titulo'
-          'imagen'
-          'inventario';
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 200px 1fr;
-        height: auto;
-        overflow-y: auto;
-      }
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin: 1rem;
+}
 
-      .titulo h1 {
-        font-size: 2.5em;
-        text-align: center;
-      }
-    }
+.feature-card p {
+  font-size: 0.95rem;
+  margin: 0 1rem 1rem;
+  color: #aaa;
+}
+
+footer {
+  background-color: #0e0e0e;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+.img{
+  background: linear-gradient(to bottom, #111, #0e0e0e34), url('../../assets/Imagenes.home/room-4699578_1920.jpg') center/cover no-repeat;
+}
+
+.hero {
+  background-color: #0e0e0e;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+  display: block;
+  font-style: italic;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+.hero-img {
+  flex: 1;
+  background-image: url('../../assets/Imagenes.home/Rollo.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 350px;
+  max-width: 500px;
+  filter: drop-shadow(1px 1px 20px rgb(239, 240, 241));
+}
+
+.inventory {
+  background-color: #111;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.inventory h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #00ffff;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.item-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+}
+
+.item-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.item-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-card p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+
+.hero {
+  background-color: #0e0e0e;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  filter: drop-shadow(1px 1px 20px rgb(239, 240, 241));
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.596);
+}
+
+
+
+.inventario {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.inventario h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #00ffff;
+}
+
+.inventario table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.inventario th,
+.inventario td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  color: #eee;
+}
+
+.inventario th {
+  background-color: #222;
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.inventario tr:hover {
+  background-color: #2a2a2a;
+}
